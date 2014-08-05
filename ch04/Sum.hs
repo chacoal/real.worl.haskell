@@ -1,0 +1,1 @@
+foldSum = foldl (+) 0
