@@ -21,3 +21,4 @@ alder32Fold xs = let (a, b) = foldl step (1, 0) xs
   where step (a, b) xs' = let a' = a + (ord xs' .&. 0xff)
                           in (a' `mod` base, (a' + b) `mod` base)
 
+
