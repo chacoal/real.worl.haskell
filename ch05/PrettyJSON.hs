@@ -10,7 +10,6 @@ import Data.Bits (shiftR, (.&.))
 import SimpleJSON (JValue(..))
 import Prettify (Doc, (<>), char, double, fsep, hcat, punctuate, text, compact, pretty)
 
-
 string :: String -> Doc
 string = enclose '"' '"' . hcat . map oneChar
 
@@ -48,12 +47,6 @@ series :: Char -> Char -> (a -> Doc) -> [a] -> Doc
 series open close item = enclose open close
                          . fsep . punctuate (char ',') . map item
 
-
-
-
-
-
-
 renderJValue :: JValue -> Doc
 renderJValue (JBool True)   = text "true"
 renderJValue (JBool False)  = text "false"
@@ -65,5 +58,3 @@ renderJValue (JObject obj)  = series '{' '}' field obj
   where field (name, val)   = string name
                               <> text ": "
                               <> renderJValue val
-
-
