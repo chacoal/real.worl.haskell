@@ -11,5 +11,4 @@ fzbz a | a `rem` 15 == 0 = "FizzBuzz"
 main :: IO ()
 main = do
   x <- readLn
-  forM_ [1..x] $ \a -> do
-    putStrLn $ fzbz a
+  forM_ [1..x] $ \a -> putStrLn $ fzbz a
