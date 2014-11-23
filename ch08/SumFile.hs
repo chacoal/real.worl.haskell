@@ -1,3 +1,5 @@
+import Data.Lis
+
 main = do
   contnets <- getContents
   print (sumFile contents)
